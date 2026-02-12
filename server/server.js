@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-import connectDB from './config/database.js';
+// import connectDB from './config/database.js';
 import authRoutes from './routes/auth.js';
 
 // Load environment variables

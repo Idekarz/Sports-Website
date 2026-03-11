@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: sports-website
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: img-src 'self' data: https:;

@@ -7,32 +7,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Premium color palette with high contrast
+        // Premium purple color palette with high contrast
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
-        },
-        accent: {
           50: '#faf5ff',
           100: '#f3e8ff',
           200: '#e9d5ff',
           300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          700: '#7e22ce',
-          800: '#6b21a8',
-          900: '#581c87',
-          950: '#3b0764',
+          400: '#A78BFA', // Light Purple
+          500: '#8b5cf6',
+          600: '#7C3AED', // Neon Purple
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4C1D95', // Deep Purple
+          950: '#2e1065',
+        },
+        accent: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#C084FC', // Accent Glow
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+          950: '#4a044e',
         },
         neutral: {
           50: '#fafafa',
@@ -45,12 +45,12 @@ module.exports = {
           700: '#404040',
           800: '#262626',
           900: '#171717',
-          950: '#0a0a0a',
+          950: '#0F0F1A', // Dark Background
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Montserrat', 'Poppins', 'sans-serif'],
       },
       fontSize: {
         'display-2xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
@@ -67,10 +67,11 @@ module.exports = {
         '4xl': '2rem',
       },
       boxShadow: {
-        'premium': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'premium-lg': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-        'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
-        'glow-lg': '0 0 40px rgba(14, 165, 233, 0.4)',
+        'premium': '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.15)',
+        'premium-lg': '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
+        'glow': '0 0 20px rgba(124, 58, 237, 0.4)', // Neon Purple Glow
+        'glow-lg': '0 0 40px rgba(124, 58, 237, 0.5)',
+        'purple-glow': '0 0 25px rgba(192, 132, 252, 0.4)', // Accent Glow
       },
     },
   },

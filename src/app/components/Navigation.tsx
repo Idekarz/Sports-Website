@@ -75,7 +75,7 @@ export function Navigation() {
                   className={`relative px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${
                     isActive(link.to)
                       ? 'text-white'
-                      : 'text-neutral-400 hover:text-neutral-200'
+                      : 'text-neutral-400 hover:text-primary-300 hover:shadow-purple-glow hover:bg-primary-900/10'
                   }`}
                 >
                   {link.label}
@@ -102,7 +102,7 @@ export function Navigation() {
             >
               <Link
                 to="/register"
-                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 hover:scale-105"
+                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:scale-105"
               >
                 Join Now
               </Link>
@@ -148,8 +148,8 @@ export function Navigation() {
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
                         isActive(link.to)
-                          ? 'text-white bg-gradient-to-r from-primary-600/20 to-accent-600/20 border border-primary-500/30'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
+                          ? 'text-white bg-gradient-to-r from-primary-600/20 to-accent-600/20 border border-primary-500/30 shadow-purple-glow'
+                          : 'text-neutral-400 hover:text-primary-300 hover:bg-primary-950/50 hover:shadow-purple-glow'
                       }`}
                     >
                       {link.label}
@@ -165,7 +165,7 @@ export function Navigation() {
                   <Link
                     to="/register"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-lg shadow-primary-500/30"
+                    className="block w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:scale-[1.02]"
                   >
                     Join Now
                   </Link>

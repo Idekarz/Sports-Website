@@ -1,6 +1,7 @@
 import { Calendar, MapPin, Users, Trophy, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function Tournaments() {
   const upcomingTournaments = [
@@ -14,6 +15,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$5,000',
       color: 'from-green-500 to-emerald-500',
+      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&h=600&auto=format&fit=crop'
     },
     {
       id: 2,
@@ -25,6 +27,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$3,500',
       color: 'from-orange-500 to-red-500',
+      image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=800&h=600&auto=format&fit=crop'
     },
     {
       id: 3,
@@ -36,6 +39,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$7,500',
       color: 'from-blue-500 to-indigo-500',
+      image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575a6?q=80&w=800&h=600&auto=format&fit=crop'
     },
     {
       id: 4,
@@ -47,6 +51,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$4,000',
       color: 'from-cyan-500 to-blue-500',
+      image: 'https://images.unsplash.com/photo-1530549595514-6ef2650dd7d3?q=80&w=800&h=600&auto=format&fit=crop'
     },
   ];
 
@@ -139,18 +144,25 @@ export function Tournaments() {
               >
                 <div className="relative bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-2xl overflow-hidden hover:border-primary-500/50 transition-all duration-300 hover:scale-105 hover:shadow-premium-lg">
                   {/* Header with gradient */}
-                  <div className={`relative h-32 bg-gradient-to-br ${tournament.color} p-6`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
-                    <div className="relative flex items-start justify-between h-full">
-                      <div className="flex-1">
-                        <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 mb-3">
-                          <span className="text-white text-sm font-semibold">{tournament.sport}</span>
+                  <div className={`relative h-48 bg-gradient-to-br ${tournament.color} overflow-hidden`}>
+                    <ImageWithFallback
+                      src={tournament.image}
+                      alt={tournament.name}
+                      className="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent"></div>
+                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                      <div className="relative flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 mb-3">
+                            <span className="text-white text-sm font-semibold">{tournament.sport}</span>
+                          </div>
+                          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">{tournament.name}</h3>
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{tournament.name}</h3>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-3xl md:text-4xl font-bold text-white mb-1">{tournament.prize}</div>
-                        <div className="text-sm text-white/80 font-medium">Prize Pool</div>
+                        <div className="text-right">
+                          <div className="text-3xl md:text-4xl font-bold text-white mb-1">{tournament.prize}</div>
+                          <div className="text-sm text-white/80 font-medium tracking-wider uppercase">Prize Pool</div>
+                        </div>
                       </div>
                     </div>
                   </div>

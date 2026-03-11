@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Trophy, Award, Target, TrendingUp, Star, Filter } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function Players() {
   const [selectedSport, setSelectedSport] = useState('All');
@@ -16,6 +17,7 @@ export function Players() {
       achievements: ['Top Scorer 2024', 'MVP Award 2023'],
       stats: { matches: 45, goals: 32, assists: 18 },
       rating: 5,
+      image: 'https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 2,
@@ -25,6 +27,7 @@ export function Players() {
       achievements: ['All-Star 2024', 'Best Defender 2023'],
       stats: { matches: 50, points: 856, assists: 234 },
       rating: 5,
+      image: 'https://images.unsplash.com/photo-1508098598026-c29c9467ac94?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 3,
@@ -34,6 +37,7 @@ export function Players() {
       achievements: ['Player of the Series 2024', 'Best All-rounder 2023'],
       stats: { matches: 38, runs: 1234, wickets: 45 },
       rating: 5,
+      image: 'https://images.unsplash.com/photo-1518605338466-9ebc1c738e4a?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 4,
@@ -43,6 +47,7 @@ export function Players() {
       achievements: ['National Champion 2024', 'Record Holder 100m'],
       stats: { races: 62, wins: 48, records: 3 },
       rating: 5,
+      image: 'https://images.unsplash.com/photo-1519315901367-f34f895fb9ad?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 5,
@@ -52,6 +57,7 @@ export function Players() {
       achievements: ['Best Midfielder 2024', 'Team Captain'],
       stats: { matches: 48, goals: 15, assists: 25 },
       rating: 4,
+      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 6,
@@ -61,6 +67,7 @@ export function Players() {
       achievements: ['Rookie of the Year 2024', 'Dunking Champion'],
       stats: { matches: 42, points: 678, rebounds: 312 },
       rating: 4,
+      image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 7,
@@ -70,6 +77,7 @@ export function Players() {
       achievements: ['Best Bowler 2024', 'Hat-trick Achievement'],
       stats: { matches: 35, wickets: 67, economy: 4.2 },
       rating: 5,
+      image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575a6?q=80&w=400&h=400&auto=format&fit=crop'
     },
     {
       id: 8,
@@ -79,6 +87,7 @@ export function Players() {
       achievements: ['Regional Champion 2024', 'Olympic Qualifier'],
       stats: { races: 55, wins: 42, records: 2 },
       rating: 4,
+      image: 'https://images.unsplash.com/photo-1530549595514-6ef2650dd7d3?q=80&w=400&h=400&auto=format&fit=crop'
     },
   ];
 
@@ -172,8 +181,12 @@ export function Players() {
                     <div className={`relative h-32 bg-gradient-to-br ${getSportColor(player.sport)} p-6`}>
                       <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
                       <div className="relative flex items-center justify-between">
-                        <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-2xl font-bold border-2 border-white/20 shadow-lg">
-                          {player.name.split(' ').map(n => n[0]).join('')}
+                        <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border-2 border-white/20 shadow-lg">
+                          <ImageWithFallback
+                            src={player.image}
+                            alt={player.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div className="text-right">
                           <div className="flex items-center gap-1 mb-1">

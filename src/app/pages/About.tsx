@@ -1,5 +1,6 @@
 import { Target, Heart, Award, Users, TrendingUp, Calendar, Star } from 'lucide-react';
 import { motion } from 'motion/react';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function About() {
   const values = [
@@ -30,10 +31,10 @@ export function About() {
   ];
 
   const team = [
-    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS' },
-    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ' },
-    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD' },
-    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW' },
+    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&h=400&auto=format&fit=crop' },
   ];
 
   const timeline = [
@@ -46,7 +47,15 @@ export function About() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50 pt-20">
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-neutral-950 via-primary-950/20 to-neutral-950 overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-neutral-950 overflow-hidden min-h-[60vh] flex items-center">
+        <div className="absolute inset-0">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1920&h=1080&auto=format&fit=crop"
+            alt="About Sports Club"
+            className="w-full h-full object-cover opacity-30 px-0"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F1A] via-[#0F0F1A]/50 to-[#0F0F1A]"></div>
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
@@ -251,8 +260,12 @@ export function About() {
                 className="group relative"
               >
                 <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 text-center hover:border-primary-500/50 transition-all duration-300 hover:scale-105 hover:shadow-premium-lg">
-                  <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
-                    {member.initials}
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl mx-auto mb-6 overflow-hidden shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+                    <ImageWithFallback
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
                   <div className="text-primary-400 font-semibold mb-3">{member.role}</div>

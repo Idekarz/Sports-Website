@@ -10,35 +10,35 @@ export function Facilities() {
       location: 'Bangalore, Karnataka', 
       type: 'Football & Cricket Turf', 
       description: 'A sprawling multi-sport complex with FIFA-standard football turfs and dedicated cricket pitches. Features floodlights for night play, changing rooms, and spectator stands.',
-      image: 'https://images.unsplash.com/photo-1579952962648-522d7a2205cf?q=80&w=1400'
+      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&h=800&auto=format&fit=crop'
     },
     {
       name: 'The Arena by Sportrepublic', 
       location: 'Mumbai, Maharashtra', 
       type: 'Padel & Badminton Courts', 
       description: 'Mumbai\'s premier indoor sports facility featuring state-of-the-art padel tennis courts and professional badminton courts. Fully air-conditioned with ample parking.',
-      image: 'https://images.unsplash.com/photo-1517462050212-d922a00c618c?q=80&w=1400'
+      image: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1400&h=800&auto=format&fit=crop'
     },
     {
       name: 'Chennai Sports Dome', 
       location: 'Chennai, Tamil Nadu', 
       type: 'Indoor Multi-Sport Facility', 
       description: 'A massive indoor dome offering facilities for basketball, volleyball, and futsal. Equipped with advanced flooring, comfortable seating, and a dedicated fitness zone.',
-      image: 'https://images.unsplash.com/photo-1546519632-4d2d416b24d7?q=80&w=1400'
+      image: 'https://images.unsplash.com/photo-1546519632-4d2d416b24d7?q=80&w=1400&h=800&auto=format&fit=crop'
     },
     {
       name: 'Hyderabad Turf Park', 
       location: 'Hyderabad, Telangana', 
       type: 'Hockey & Football Turf', 
       description: 'A lush green turf park designed for field hockey and football, meeting international standards. Includes coaching academies, a cafeteria, and ample open space.',
-      image: 'https://images.unsplash.com/photo-1549476465-950c4ce8c71d?q=80&w=1400'
+      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&h=800&auto=format&fit=crop'
     },
     {
       name: 'Delhi Olympic Village', 
       location: 'Delhi, NCR', 
       type: 'Athletics Track & Field', 
       description: 'The iconic Delhi Olympic Village offers a world-class synthetic athletics track and various field event facilities. A historical venue for aspiring Olympians.',
-      image: 'https://images.unsplash.com/photo-1547847146-81aa71d0e80a?q=80&w=1400'
+      image: 'https://images.unsplash.com/photo-1526676037598-331513101c56?q=80&w=1400&h=800&auto=format&fit=crop'
     },
   ];
 
@@ -100,11 +100,11 @@ export function Facilities() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="h-60 w-full relative">
-                  <img
+                <div className="h-64 w-full relative">
+                  <ImageWithFallback
                     src={turf.image}
                     alt={turf.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-6">

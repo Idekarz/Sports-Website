@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --force",
+    "dev": "vite --force --host",
     "server": "cd server && npm start",
     "server:dev": "cd server && npm run dev",
     "dev:full": "concurrently \"npm run server\" \"npm run dev\""

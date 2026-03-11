@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserPlus, CheckCircle, ArrowRight, Sparkles, Shield, Clock, Users, AlertCircle, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function Register() {
   const [submitted, setSubmitted] = useState(false);
@@ -131,7 +132,15 @@ export function Register() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50 pt-20">
       {/* Header */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-neutral-950 via-primary-950/20 to-neutral-950 overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-neutral-950 overflow-hidden min-h-[40vh] flex items-center">
+        <div className="absolute inset-0">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1508098598026-c29c9467ac94?q=80&w=1920&h=1080&auto=format&fit=crop"
+            alt="Join Sports Club"
+            className="w-full h-full object-cover opacity-20 px-0"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F1A] via-transparent to-[#0F0F1A]"></div>
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
@@ -211,7 +220,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.firstName ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.firstName ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="John"
                     />
@@ -234,7 +243,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.lastName ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.lastName ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="Doe"
                     />
@@ -269,7 +278,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.email ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.email ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="john@example.com"
                     />
@@ -292,7 +301,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.phone ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.phone ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="+1 (555) 123-4567"
                     />
@@ -327,7 +336,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.dateOfBirth ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.dateOfBirth ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                     />
                     {errors.dateOfBirth && (
@@ -351,7 +360,7 @@ export function Register() {
                       min="10"
                       max="100"
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.age ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.age ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="25"
                     />
@@ -373,7 +382,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.bloodGroup ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.bloodGroup ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                     >
                       <option value="">Select Blood Group</option>
@@ -410,7 +419,7 @@ export function Register() {
                     onChange={handleChange}
                     required
                     className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                      errors.sport ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                      errors.sport ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                     }`}
                   >
                     <option value="">Select Your Sport</option>
@@ -448,7 +457,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.emergencyContact ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.emergencyContact ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="Jane Doe"
                     />
@@ -471,7 +480,7 @@ export function Register() {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                        errors.emergencyPhone ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                        errors.emergencyPhone ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                       }`}
                       placeholder="+1 (555) 987-6543"
                     />
@@ -504,7 +513,7 @@ export function Register() {
                     onChange={handleChange}
                     rows={4}
                     className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none ${
-                      errors.medicalConditions ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-500'
+                      errors.medicalConditions ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
                     }`}
                     placeholder="Please list any medical conditions, allergies, or medications we should be aware of..."
                   />
@@ -522,7 +531,7 @@ export function Register() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 disabled:from-neutral-600 disabled:to-neutral-600 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="group w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 disabled:from-neutral-600 disabled:to-neutral-600 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>

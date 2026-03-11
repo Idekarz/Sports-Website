@@ -11,11 +11,11 @@ export function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const heroImages = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Epic Football Action' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Cricket Batting Moment' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Energy Basketball Dunk' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1519315901367-f34f895fb9ad?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Pro Swimmer Racing' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1474224017046-278cec854ed2?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Wide Stadium Crowd' }
+    { id: 1, src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Epic Football Action' },
+    { id: 2, src: 'https://images.unsplash.com/photo-1593341646782-20b495cff86d?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Cricket Batting Moment' },
+    { id: 3, src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Energy Basketball Dunk' },
+    { id: 4, src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Pro Swimmer Racing' },
+    { id: 5, src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&h=1080&auto=format&fit=crop', alt: 'Wide Stadium Crowd' }
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -72,6 +72,7 @@ export function Home() {
     'https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=800&h=600&auto=format&fit=crop', // Basketball dunk
     'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=800&h=600&auto=format&fit=crop', // Tennis action
     'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&h=600&auto=format&fit=crop', // Stadium lights
+    'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&h=800&auto=format&fit=crop', // High quality action image
   ];
 
   return (
@@ -390,7 +391,7 @@ export function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`group relative rounded-2xl overflow-hidden cursor-pointer ${
-                  index === 0 || index === 3 || index === 4 ? 'md:col-span-2 lg:col-span-2 aspect-[16/9]' : 'aspect-square md:aspect-[4/3] lg:aspect-square'
+                  index === 0 || index === 3 ? 'md:col-span-2 lg:col-span-2 aspect-[16/9]' : 'aspect-square md:aspect-[4/3] lg:aspect-square'
                 }`}
               >
                 <div className="absolute inset-0">

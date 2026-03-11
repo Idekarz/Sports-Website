@@ -202,9 +202,7 @@ export function Home() {
         </div>
       </motion.section>
 
-
-
-      {/* 3. UPCOMING MATCHES SECTION */}
+      {/* 2. UPCOMING MATCHES SECTION */}
       <section className="py-24 md:py-32 bg-neutral-950 relative border-t border-neutral-900">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-900/10 rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -278,7 +276,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 4. PLAYER REGISTRATION SECTION */}
+      {/* 3. PLAYER REGISTRATION SECTION */}
       <section className="py-24 md:py-0 bg-[#0F0F1A]">
         <div className="flex flex-col md:flex-row min-h-[80vh]">
           {/* Image Side */}
@@ -366,7 +364,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 5. GALLERY SECTION */}
+      {/* 4. GALLERY SECTION */}
       <section className="py-24 md:py-32 bg-neutral-950">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -413,7 +411,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 6. STATS SECTION (Animated Counters) */}
+      {/* 5. STATS SECTION (Animated Counters) */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-neutral-950 via-primary-950/20 to-[#0F0F1A] border-y border-neutral-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

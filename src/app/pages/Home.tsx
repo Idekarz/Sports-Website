@@ -11,11 +11,13 @@ export function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const heroImages = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop', alt: 'Epic Football Action' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1593341646782-e0b495cff86d?q=80&w=2070&auto=format&fit=crop', alt: 'Cricket Batting Moment' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop', alt: 'Energy Basketball Dunk' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop', alt: 'Pro Swimmer Racing' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop', alt: 'Wide Stadium Crowd' }
+    "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1510279770292-4b34de9f5c23?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070&auto=format&fit=crop"
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -23,7 +25,7 @@ export function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
@@ -98,9 +100,9 @@ export function Home() {
                 transition={{ duration: 8, ease: "linear" }}
                 className="w-full h-full"
               >
-                <img
-                  src={heroImages[currentHeroIndex].src}
-                  alt={heroImages[currentHeroIndex].alt}
+                <img 
+                  src={heroImages[currentHeroIndex]} 
+                  alt="sports hero" 
                   className="w-full h-full object-cover object-center"
                 />
               </motion.div>

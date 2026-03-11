@@ -12,12 +12,10 @@ export function Home() {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1510279770292-4b34de9f5c23?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070&auto=format&fit=crop"
+    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop"
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -103,7 +101,7 @@ export function Home() {
                 <img 
                   src={heroImages[currentHeroIndex]} 
                   alt="sports hero" 
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover"
                 />
               </motion.div>
             </motion.div>

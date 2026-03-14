@@ -20,6 +20,7 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
         alt="Error loading image"
         className={className}
         style={style}
+        referrerPolicy="no-referrer"
         {...rest}
       />
     )
@@ -31,6 +32,7 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       alt={alt}
       className={className}
       style={style}
+      referrerPolicy="no-referrer"
       {...rest}
       onError={handleError}
       loading="lazy"

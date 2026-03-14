@@ -102,6 +102,7 @@ export function Home() {
                   src={heroImages[currentHeroIndex]} 
                   alt="sports hero" 
                   className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
               </motion.div>
             </motion.div>

@@ -15,7 +15,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$5,000',
       color: 'from-green-500 to-emerald-500',
-      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&h=600&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/tournament1/800/600'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$3,500',
       color: 'from-orange-500 to-red-500',
-      image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=800&h=600&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/tournament2/800/600'
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$7,500',
       color: 'from-blue-500 to-indigo-500',
-      image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575a6?q=80&w=800&h=600&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/tournament3/800/600'
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export function Tournaments() {
       status: 'Registration Open',
       prize: '$4,000',
       color: 'from-cyan-500 to-blue-500',
-      image: 'https://images.unsplash.com/photo-1530549595514-6ef2650dd7d3?q=80&w=800&h=600&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/tournament4/800/600'
     },
   ];
 

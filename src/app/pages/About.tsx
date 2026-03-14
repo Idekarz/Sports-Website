@@ -31,10 +31,10 @@ export function About() {
   ];
 
   const team = [
-    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://picsum.photos/seed/person1/400/400' },
+    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://picsum.photos/seed/person2/400/400' },
+    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://picsum.photos/seed/person3/400/400' },
+    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://picsum.photos/seed/person4/400/400' },
   ];
 
   const timeline = [
@@ -50,7 +50,7 @@ export function About() {
       <section className="relative py-24 md:py-32 bg-neutral-950 overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1920&h=1080&auto=format&fit=crop"
+            src="https://picsum.photos/seed/sports-about/1920/1080"
             alt="About Sports Club"
             className="w-full h-full object-cover opacity-30 px-0"
           />

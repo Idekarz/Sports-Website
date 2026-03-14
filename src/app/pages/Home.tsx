@@ -11,11 +11,11 @@ export function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop"
+    "https://picsum.photos/seed/football1/2070/1380",
+    "https://picsum.photos/seed/cricket1/2070/1380",
+    "https://picsum.photos/seed/basketball1/2070/1380",
+    "https://picsum.photos/seed/swimming1/2070/1380",
+    "https://picsum.photos/seed/sports5/2070/1380"
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -67,11 +67,11 @@ export function Home() {
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=2070&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop',
+    'https://picsum.photos/seed/gallery1/1200/800',
+    'https://picsum.photos/seed/gallery2/1200/800',
+    'https://picsum.photos/seed/gallery3/1200/800',
+    'https://picsum.photos/seed/gallery4/1200/800',
+    'https://picsum.photos/seed/gallery5/1200/800',
   ];
 
   return (
@@ -290,7 +290,7 @@ export function Home() {
           >
             <div className="absolute inset-0">
                <ImageWithFallback 
-                 src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&h=1600&auto=format&fit=crop" 
+                 src="https://picsum.photos/seed/athlete1/1200/1600" 
                  alt="Athlete Training" 
                  className="w-full h-full object-cover" 
                />
@@ -414,7 +414,7 @@ export function Home() {
 
       {/* 5. STATS SECTION (Animated Counters) */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-neutral-950 via-primary-950/20 to-[#0F0F1A] border-y border-neutral-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div className="absolute inset-0 opacity-5" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divider-x-0 md:divide-x divide-neutral-800">
             

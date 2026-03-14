@@ -10,35 +10,35 @@ export function Facilities() {
       location: 'Bangalore, Karnataka', 
       type: 'Football & Cricket Turf', 
       description: 'A sprawling multi-sport complex with FIFA-standard football turfs and dedicated cricket pitches. Features floodlights for night play, changing rooms, and spectator stands.',
-      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&h=800&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/facility1/1400/800'
     },
     {
       name: 'The Arena by Sportrepublic', 
       location: 'Mumbai, Maharashtra', 
       type: 'Padel & Badminton Courts', 
       description: 'Mumbai\'s premier indoor sports facility featuring state-of-the-art padel tennis courts and professional badminton courts. Fully air-conditioned with ample parking.',
-      image: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1400&h=800&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/facility2/1400/800'
     },
     {
       name: 'Chennai Sports Dome', 
       location: 'Chennai, Tamil Nadu', 
       type: 'Indoor Multi-Sport Facility', 
       description: 'A massive indoor dome offering facilities for basketball, volleyball, and futsal. Equipped with advanced flooring, comfortable seating, and a dedicated fitness zone.',
-      image: 'https://images.unsplash.com/photo-1546519632-4d2d416b24d7?q=80&w=1400&h=800&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/facility3/1400/800'
     },
     {
       name: 'Hyderabad Turf Park', 
       location: 'Hyderabad, Telangana', 
       type: 'Hockey & Football Turf', 
       description: 'A lush green turf park designed for field hockey and football, meeting international standards. Includes coaching academies, a cafeteria, and ample open space.',
-      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&h=800&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/facility4/1400/800'
     },
     {
       name: 'Delhi Olympic Village', 
       location: 'Delhi, NCR', 
       type: 'Athletics Track & Field', 
       description: 'The iconic Delhi Olympic Village offers a world-class synthetic athletics track and various field event facilities. A historical venue for aspiring Olympians.',
-      image: 'https://images.unsplash.com/photo-1526676037598-331513101c56?q=80&w=1400&h=800&auto=format&fit=crop'
+      image: 'https://picsum.photos/seed/facility5/1400/800'
     },
   ];
 

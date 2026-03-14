@@ -11,11 +11,16 @@ export function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const heroImages = [
-    "https://picsum.photos/seed/football1/2070/1380",
-    "https://picsum.photos/seed/cricket1/2070/1380",
-    "https://picsum.photos/seed/basketball1/2070/1380",
-    "https://picsum.photos/seed/swimming1/2070/1380",
-    "https://picsum.photos/seed/sports5/2070/1380"
+    // Football stadium night game
+    "https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    // Cricket match
+    "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    // Basketball game
+    "https://images.pexels.com/photos/358042/pexels-photo-358042.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    // Swimming competition
+    "https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    // Stadium aerial
+    "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop"
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -67,11 +72,16 @@ export function Home() {
   ];
 
   const galleryImages = [
-    'https://picsum.photos/seed/gallery1/1200/800',
-    'https://picsum.photos/seed/gallery2/1200/800',
-    'https://picsum.photos/seed/gallery3/1200/800',
-    'https://picsum.photos/seed/gallery4/1200/800',
-    'https://picsum.photos/seed/gallery5/1200/800',
+    // Athletes training
+    'https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    // Basketball action
+    'https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    // Soccer/football
+    'https://images.pexels.com/photos/2834917/pexels-photo-2834917.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    // Swimming
+    'https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    // Sports arena
+    'https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
   ];
 
   return (
@@ -290,7 +300,7 @@ export function Home() {
           >
             <div className="absolute inset-0">
                <ImageWithFallback 
-                 src="https://picsum.photos/seed/athlete1/1200/1600" 
+                 src="https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1600&fit=crop" 
                  alt="Athlete Training" 
                  className="w-full h-full object-cover" 
                />

@@ -31,10 +31,10 @@ export function About() {
   ];
 
   const team = [
-    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://picsum.photos/seed/person1/400/400' },
-    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://picsum.photos/seed/person2/400/400' },
-    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://picsum.photos/seed/person3/400/400' },
-    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://picsum.photos/seed/person4/400/400' },
+    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
+    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
+    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
+    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://images.pexels.com/photos/3621583/pexels-photo-3621583.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
   ];
 
   const timeline = [
@@ -50,7 +50,7 @@ export function About() {
       <section className="relative py-24 md:py-32 bg-neutral-950 overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://picsum.photos/seed/sports-about/1920/1080"
+            src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="About Sports Club"
             className="w-full h-full object-cover opacity-30 px-0"
           />

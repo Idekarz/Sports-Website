@@ -53,8 +53,9 @@ app.get('/api/health', (req, res) => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from dist
+// Serve static files from dist and public
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('public'));
 
 // React Router support
 app.get('*', (req, res) => {

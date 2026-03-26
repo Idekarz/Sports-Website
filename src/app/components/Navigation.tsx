@@ -47,7 +47,7 @@ export function Navigation() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="https://img.icons8.com/ios-filled/100/ffffff/trophy.png"
+                src="/assets/local-asset-1.png"
                 alt="Sports Club Logo"
                 className="w-10 h-10 object-contain drop-shadow-lg"
               />

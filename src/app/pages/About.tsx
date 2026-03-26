@@ -31,10 +31,10 @@ export function About() {
   ];
 
   const team = [
-    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
-    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
-    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
-    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: 'https://images.pexels.com/photos/3621583/pexels-photo-3621583.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop' },
+    { name: 'John Smith', role: 'Club President', experience: '15 years in sports management', initials: 'JS', image: '/assets/local-asset-2.jpg' },
+    { name: 'Sarah Johnson', role: 'Head Coach', experience: 'Olympic medalist and certified trainer', initials: 'SJ', image: '/assets/local-asset-3.jpg' },
+    { name: 'Mike Davis', role: 'Tournament Director', experience: '10+ years organizing events', initials: 'MD', image: '/assets/local-asset-4.jpg' },
+    { name: 'Emma Wilson', role: 'Youth Program Director', experience: 'Specialized in youth development', initials: 'EW', image: '/assets/local-asset-5.jpg' },
   ];
 
   const timeline = [
@@ -50,7 +50,7 @@ export function About() {
       <section className="relative py-24 md:py-32 bg-neutral-950 overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            src="/assets/local-asset-6.jpg"
             alt="About Sports Club"
             className="w-full h-full object-cover opacity-30 px-0"
           />

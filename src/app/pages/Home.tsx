@@ -12,15 +12,15 @@ export function Home() {
 
   const heroImages = [
     // Football stadium night game
-    "https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    "/assets/local-asset-12.jpg",
     // Cricket match
-    "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    "/assets/local-asset-13.jpg",
     // Basketball game
-    "https://images.pexels.com/photos/358042/pexels-photo-358042.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    "/assets/local-asset-14.jpg",
     // Swimming competition
-    "https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop",
+    "/assets/local-asset-15.jpg",
     // Stadium aerial
-    "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&fit=crop"
+    "/assets/local-asset-16.jpg"
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -73,15 +73,15 @@ export function Home() {
 
   const galleryImages = [
     // Athletes training
-    'https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    '/assets/local-asset-17.jpg',
     // Basketball action
-    'https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    '/assets/local-asset-18.jpg',
     // Soccer/football
-    'https://images.pexels.com/photos/2834917/pexels-photo-2834917.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    '/assets/local-asset-19.jpg',
     // Swimming
-    'https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    '/assets/local-asset-20.jpg',
     // Sports arena
-    'https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    '/assets/local-asset-21.jpg',
   ];
 
   return (
@@ -300,7 +300,7 @@ export function Home() {
           >
             <div className="absolute inset-0">
                <ImageWithFallback 
-                 src="https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1600&fit=crop" 
+                 src="/assets/local-asset-22.jpg" 
                  alt="Athlete Training" 
                  className="w-full h-full object-cover" 
                />

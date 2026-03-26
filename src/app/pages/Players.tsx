@@ -17,7 +17,7 @@ export function Players() {
       achievements: ['Top Scorer 2024', 'MVP Award 2023'],
       stats: { matches: 45, goals: 32, assists: 18 },
       rating: 5,
-      image: 'https://images.pexels.com/photos/1814487/pexels-photo-1814487.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-23.jpg'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export function Players() {
       achievements: ['All-Star 2024', 'Best Defender 2023'],
       stats: { matches: 50, points: 856, assists: 234 },
       rating: 5,
-      image: 'https://images.pexels.com/photos/1415550/pexels-photo-1415550.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-24.jpg'
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export function Players() {
       achievements: ['Player of the Series 2024', 'Best All-rounder 2023'],
       stats: { matches: 38, runs: 1234, wickets: 45 },
       rating: 5,
-      image: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-25.jpg'
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ export function Players() {
       achievements: ['National Champion 2024', 'Record Holder 100m'],
       stats: { races: 62, wins: 48, records: 3 },
       rating: 5,
-      image: 'https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-26.jpg'
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ export function Players() {
       achievements: ['Best Midfielder 2024', 'Team Captain'],
       stats: { matches: 48, goals: 15, assists: 25 },
       rating: 4,
-      image: 'https://images.pexels.com/photos/3621583/pexels-photo-3621583.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-5.jpg'
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ export function Players() {
       achievements: ['Rookie of the Year 2024', 'Dunking Champion'],
       stats: { matches: 42, points: 678, rebounds: 312 },
       rating: 4,
-      image: 'https://images.pexels.com/photos/3764568/pexels-photo-3764568.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-27.jpg'
     },
     {
       id: 7,
@@ -77,7 +77,7 @@ export function Players() {
       achievements: ['Best Bowler 2024', 'Hat-trick Achievement'],
       stats: { matches: 35, wickets: 67, economy: 4.2 },
       rating: 5,
-      image: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-3.jpg'
     },
     {
       id: 8,
@@ -87,7 +87,7 @@ export function Players() {
       achievements: ['Regional Champion 2024', 'Olympic Qualifier'],
       stats: { races: 55, wins: 42, records: 2 },
       rating: 4,
-      image: 'https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+      image: '/assets/local-asset-28.jpg'
     },
   ];
 

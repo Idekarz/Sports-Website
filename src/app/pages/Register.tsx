@@ -17,6 +17,8 @@ export function Register() {
     age: '',
     sport: '',
     bloodGroup: '',
+    jerseySize: '', // New field
+    aadhaar: '', // New field
     emergencyContact: '',
     emergencyPhone: '',
     medicalConditions: '',
@@ -24,6 +26,7 @@ export function Register() {
 
   const sports = ['Football', 'Basketball', 'Cricket', 'Swimming'];
   const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+  const jerseySizes = ['S', 'M', 'L', 'XL', 'XXL']; // New options
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -49,7 +52,7 @@ export function Register() {
       console.log('🚀 Frontend: Submitting player registration');
       console.log('📤 Frontend: Sending data:', JSON.stringify(formData, null, 2));
 
-      const response = await fetch('http://localhost:3001/api/players', {
+      const response = await fetch('http://localhost:5000/api/players/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,6 +78,8 @@ export function Register() {
             age: '',
             sport: '',
             bloodGroup: '',
+            jerseySize: '',
+            aadhaar: '',
             emergencyContact: '',
             emergencyPhone: '',
             medicalConditions: '',
@@ -207,7 +212,7 @@ export function Register() {
                   </div>
                   Personal Information
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-semibold mb-2 text-neutral-300 uppercase tracking-wider">
                       First Name *
@@ -251,6 +256,38 @@ export function Register() {
                       <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
                         <AlertCircle className="w-4 h-4" />
                         {errors.lastName}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="aadhaar" className="block text-sm font-semibold mb-2 text-neutral-300 uppercase tracking-wider">
+                      Aadhaar Number *
+                    </label>
+                    <input
+                      type="text"
+                      id="aadhaar"
+                      name="aadhaar"
+                      value={formData.aadhaar}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '').slice(0, 12);
+                        setFormData({ ...formData, aadhaar: val });
+                      }}
+                      required
+                      className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.aadhaar || (formData.aadhaar && formData.aadhaar.length !== 12) ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
+                      }`}
+                      placeholder="12 digit Aadhaar"
+                    />
+                    {formData.aadhaar && formData.aadhaar.length !== 12 && (
+                      <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        Must be exactly 12 digits
+                      </p>
+                    )}
+                    {errors.aadhaar && (
+                      <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.aadhaar}
                       </p>
                     )}
                   </div>
@@ -431,6 +468,32 @@ export function Register() {
                     <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
                       <AlertCircle className="w-4 h-4" />
                       {errors.sport}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-6">
+                  <label htmlFor="jerseySize" className="block text-sm font-semibold mb-2 text-neutral-300 uppercase tracking-wider">
+                    Jersey Size *
+                  </label>
+                  <select
+                    id="jerseySize"
+                    name="jerseySize"
+                    value={formData.jerseySize}
+                    onChange={handleChange}
+                    required
+                    className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                      errors.jerseySize ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
+                    }`}
+                  >
+                    <option value="">Select Jersey Size</option>
+                    {jerseySizes.map(size => (
+                      <option key={size} value={size}>{size}</option>
+                    ))}
+                  </select>
+                  {errors.jerseySize && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.jerseySize}
                     </p>
                   )}
                 </div>

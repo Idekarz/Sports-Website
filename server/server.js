@@ -2,17 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-// import connectDB from './config/database.js';
-import authRoutes from './routes/auth.js';
+import mongoose from 'mongoose';
+import connectDB from './config/database.js';
+import playerRoutes from './routes/players.js';
+import teamRoutes from './routes/teams.js';
 
 // Load environment variables
 dotenv.config({ path: '../.env' });
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
-// connectDB();
+connectDB();
 
 console.log('🚀 Starting Sports Club Server...');
 console.log('📊 Environment:', process.env.NODE_ENV || 'development');
@@ -29,14 +31,13 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-app.use('/api', authRoutes);
+app.use('/api/players', playerRoutes);
+app.use('/api/teams', teamRoutes);
 
 // Health check endpoint
 app.get('/api/health', async (req, res) => {
   try {
-    // Check MongoDB connection
-    const mongoose = await import('mongoose');
-    const dbState = mongoose.default.connection.readyState;
+    const dbState = mongoose.connection.readyState;
     const dbStatus = {
       0: 'disconnected',
       1: 'connected',
@@ -44,20 +45,14 @@ app.get('/api/health', async (req, res) => {
       3: 'disconnecting'
     };
 
-    // Get player count
-    const Player = await import('./models/User.js');
-    const playersCount = await Player.default.countDocuments();
-
     res.json({
       success: true,
       message: 'Server is running',
       timestamp: new Date().toISOString(),
       database: {
         status: dbStatus[dbState] || 'unknown',
-        name: mongoose.default.connection.name,
-        host: mongoose.default.connection.host
-      },
-      playersCount
+        name: mongoose.connection.name
+      }
     });
   } catch (error) {
     res.status(500).json({
@@ -89,4 +84,4 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-});
+});

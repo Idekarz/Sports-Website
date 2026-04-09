@@ -25,6 +25,7 @@ export function Navigation() {
     { to: '/players', label: 'Players' },
     { to: '/tournaments', label: 'Tournaments' },
     { to: '/register', label: 'Register' },
+    { to: '/team-register', label: 'Team Registration' },
   ];
 
   return (

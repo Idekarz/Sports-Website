@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { UserPlus, CheckCircle, ArrowRight, Sparkles, Shield, Clock, Users, AlertCircle, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
@@ -12,6 +13,7 @@ export function Register() {
     firstName: '',
     lastName: '',
     email: '',
+    password: '',
     phone: '',
     dateOfBirth: '',
     age: '',
@@ -50,21 +52,20 @@ export function Register() {
 
     try {
       console.log('🚀 Frontend: Submitting player registration');
-      console.log('📤 Frontend: Sending data:', JSON.stringify(formData, null, 2));
+      
+      const payload = {
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        password: formData.password
+      };
+      
+      console.log('📤 Frontend: Sending data:', JSON.stringify(payload, null, 2));
 
-      const response = await fetch('http://localhost:5000/api/players/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('http://localhost:5000/api/register', payload);
 
       console.log('📥 Frontend: Response status:', response.status);
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (response.data.success) {
         setSubmitted(true);
         // Reset form after successful submission
         setTimeout(() => {
@@ -73,6 +74,7 @@ export function Register() {
             firstName: '',
             lastName: '',
             email: '',
+            password: '',
             phone: '',
             dateOfBirth: '',
             age: '',
@@ -85,21 +87,24 @@ export function Register() {
             medicalConditions: '',
           });
         }, 5000);
-      } else {
+      }
+    } catch (error: any) {
+      console.error('Registration error:', error);
+      if (error.response && error.response.data) {
+        const data = error.response.data;
         if (data.errors && Array.isArray(data.errors)) {
           // Handle validation errors
           const validationErrors: Record<string, string> = {};
-          data.errors.forEach((error: any) => {
-            validationErrors[error.param] = error.msg;
+          data.errors.forEach((err: any) => {
+            validationErrors[err.path || err.param] = err.msg;
           });
           setErrors(validationErrors);
         } else {
           setApiError(data.message || 'Registration failed. Please try again.');
         }
+      } else {
+        setApiError('Network error. Please check your connection and try again.');
       }
-    } catch (error) {
-      console.error('Registration error:', error);
-      setApiError('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -302,7 +307,7 @@ export function Register() {
                   </div>
                   Contact Information
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold mb-2 text-neutral-300 uppercase tracking-wider">
                       Email Address *
@@ -323,6 +328,30 @@ export function Register() {
                       <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
                         <AlertCircle className="w-4 h-4" />
                         {errors.email}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="password" className="block text-sm font-semibold mb-2 text-neutral-300 uppercase tracking-wider">
+                      Password *
+                    </label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                      minLength={6}
+                      className={`w-full px-4 py-3 bg-neutral-800 border rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.password ? 'border-red-500 focus:ring-red-500' : 'border-neutral-700 focus:ring-primary-400 focus:shadow-purple-glow'
+                      }`}
+                      placeholder="••••••••"
+                    />
+                    {errors.password && (
+                      <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.password}
                       </p>
                     )}
                   </div>

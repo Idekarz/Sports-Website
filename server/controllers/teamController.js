@@ -1,28 +1,25 @@
-import Team from '../models/Team.js';
+import { supabase } from '../config/supabase.js';
 
 export const registerTeam = async (req, res) => {
   try {
     console.log('🚀 Backend: Received team registration request');
     console.log('📦 Data:', req.body);
 
-    const { teamName, coachName, email, phone, playerCount, teamMembers } = req.body;
+    const { data, error } = await supabase
+      .from('teams')
+      .insert([ req.body ])
+      .select();
 
-    const newTeam = new Team({
-      teamName,
-      coachName,
-      email,
-      phone,
-      playerCount,
-      teamMembers
-    });
+    if (error) {
+      throw error;
+    }
 
-    const savedTeam = await newTeam.save();
-    console.log('✅ Team saved successfully:', savedTeam._id);
+    console.log('✅ Team saved successfully:', data[0].id);
 
     res.status(201).json({
       success: true,
       message: 'Team registered successfully',
-      team: savedTeam
+      team: data[0]
     });
   } catch (error) {
     console.error('❌ Error registering team:', error);

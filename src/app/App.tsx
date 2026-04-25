@@ -5,6 +5,7 @@ import { About } from './pages/About';
 import { Players } from './pages/Players';
 import { Tournaments } from './pages/Tournaments';
 import { Register } from './pages/Register';
+import { Login } from './pages/Login';
 import { TeamRegister } from './pages/TeamRegister'; // Import the new Team Registration page
 import { Facilities } from './pages/Facilities'; // Import the new Facilities page
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/players" element={<Players />} />
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/team-register" element={<TeamRegister />} />
           <Route path="/facilities" element={<Facilities />} />
         </Routes>

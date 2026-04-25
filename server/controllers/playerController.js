@@ -1,31 +1,34 @@
-import Player from '../models/Player.js';
+import { supabase } from '../config/supabase.js';
 
 export const registerPlayer = async (req, res) => {
   try {
     console.log('🚀 Backend: Received player registration request');
     console.log('📦 Data:', req.body);
 
-    const { firstName, lastName, email, age, jerseySize, aadhaar, ...otherData } = req.body;
+    const { firstName, lastName, ...otherData } = req.body;
+    const playerName = `${firstName} ${lastName}`.trim() || req.body.name;
 
-    // Map firstName and lastName to 'name' as requested in specific model requirement
-    const playerName = `${firstName} ${lastName}`.trim();
+    // Use Supabase Insert to 'players' table
+    const { data, error } = await supabase
+      .from('players')
+      .insert([
+        { 
+          name: playerName,
+          ...otherData
+        }
+      ])
+      .select(); // Ask Supabase to return the newly generated row
 
-    const newPlayer = new Player({
-      name: playerName || req.body.name, // Support both formats
-      email,
-      age,
-      jerseySize,
-      aadhaar,
-      ...otherData
-    });
+    if (error) {
+      throw error;
+    }
 
-    const savedPlayer = await newPlayer.save();
-    console.log('✅ Player saved successfully:', savedPlayer._id);
+    console.log('✅ Player saved successfully:', data[0].id);
 
     res.status(201).json({
       success: true,
       message: 'Player registered successfully',
-      player: savedPlayer
+      player: data[0]
     });
   } catch (error) {
     console.error('❌ Error registering player:', error);

@@ -26,11 +26,13 @@ export function Login() {
     e.preventDefault();
     setIsSubmitting(true);
     setApiError('');
+    
+    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     try {
       console.log('🚀 Frontend: Attempting Login...');
 
-      const response = await axios.post('http://localhost:5000/api/login', formData);
+      const response = await axios.post(`${API_BASE}/api/login`, formData);
 
       console.log('📥 Frontend: Login Response:', response.status);
 

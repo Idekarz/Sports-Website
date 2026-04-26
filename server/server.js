@@ -7,8 +7,12 @@ import teamRoutes from './routes/teams.js';
 import authRoutes from './routes/authRoutes.js';
 import { supabase } from './config/supabase.js';
 
-// Load environment variables
-dotenv.config({ path: '../.env' });
+// Load environment variables (local .env file for development; Render injects them directly)
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -65,7 +69,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
 });

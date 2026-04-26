@@ -7,7 +7,6 @@ import teamRoutes from './routes/teams.js';
 import authRoutes from './routes/authRoutes.js';
 import { supabase } from './config/supabase.js';
 
-// Load environment variables (local .env file for development; Render injects them directly)
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -51,12 +50,13 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'Endpoint not found'
-  });
+// Serve the built React frontend (production)
+const distPath = path.resolve(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// For any non-API route, serve index.html (React Router handles client-side routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Error handler

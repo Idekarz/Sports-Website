@@ -1,10 +1,13 @@
 services:
   - type: web
     name: sports-website
-    env: static
-    buildCommand: npm run build
-    staticPublishPath: dist
-    headers:
-      - path: /*
-        name: Content-Security-Policy
-        value: img-src 'self' data: https:;
+    runtime: node
+    buildCommand: npm install && npm run build && cd server && npm install
+    startCommand: cd server && node server.js
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production

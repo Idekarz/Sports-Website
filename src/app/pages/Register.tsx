@@ -61,7 +61,7 @@ export function Register() {
       
       console.log('📤 Frontend: Sending data:', JSON.stringify(payload, null, 2));
 
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_BASE = import.meta.env.VITE_API_URL || '';
       const response = await axios.post(`${API_BASE}/api/register`, payload);
 
       console.log('📥 Frontend: Response status:', response.status);

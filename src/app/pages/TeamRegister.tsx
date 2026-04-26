@@ -95,7 +95,7 @@ export function TeamRegister() {
 
     try {
       console.log('🚀 Frontend: Submitting team registration');
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_BASE = import.meta.env.VITE_API_URL || '';
       const response = await fetch(`${API_BASE}/api/teams/register`, {
         method: 'POST',
         headers: {

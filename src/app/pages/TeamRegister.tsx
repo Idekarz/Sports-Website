@@ -15,7 +15,7 @@ export function TeamRegister() {
     phone: '',
     playerCount: '1',
     teamMembers: [
-      { name: '', age: '', position: '', jerseyNumber: '', aadhaar: '' }
+      { name: '', age: '', position: '', jerseyNumber: '', aadhaar: '', phone: '' }
     ],
   });
 
@@ -44,7 +44,7 @@ export function TeamRegister() {
   const addMember = () => {
     setFormData({
       ...formData,
-      teamMembers: [...formData.teamMembers, { name: '', age: '', position: '', jerseyNumber: '', aadhaar: '' }],
+      teamMembers: [...formData.teamMembers, { name: '', age: '', position: '', jerseyNumber: '', aadhaar: '', phone: '' }],
       playerCount: (formData.teamMembers.length + 1).toString()
     });
   };
@@ -75,6 +75,7 @@ export function TeamRegister() {
       if (!member.age) newErrors[`member_${index}_age`] = 'Required';
       if (!member.position) newErrors[`member_${index}_position`] = 'Required';
       if (!member.jerseyNumber) newErrors[`member_${index}_jersey`] = 'Required';
+      if (!member.phone) newErrors[`member_${index}_phone`] = 'Required';
       if (!member.aadhaar) {
         newErrors[`member_${index}_aadhaar`] = 'Required';
       } else if (member.aadhaar.length !== 12) {
@@ -116,7 +117,7 @@ export function TeamRegister() {
             email: '',
             phone: '',
             playerCount: '1',
-            teamMembers: [{ name: '', age: '', position: '', jerseyNumber: '', aadhaar: '' }],
+            teamMembers: [{ name: '', age: '', position: '', jerseyNumber: '', aadhaar: '', phone: '' }],
           });
         }, 5000);
       } else {
@@ -356,7 +357,18 @@ export function TeamRegister() {
                           />
                           {errors[`member_${index}_jersey`] && <p className="text-red-400 text-[10px] mt-1">{errors[`member_${index}_jersey`]}</p>}
                         </div>
-                        <div className="lg:col-span-2">
+                        <div>
+                          <label className="block text-xs font-bold mb-2 text-neutral-400 uppercase">Phone Number *</label>
+                          <input
+                            type="tel"
+                            value={member.phone || ''}
+                            onChange={(e) => handleMemberChange(index, 'phone', e.target.value)}
+                            className="w-full px-3 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white text-sm focus:ring-1 focus:ring-primary-500 outline-none"
+                            placeholder="Player Phone"
+                          />
+                          {errors[`member_${index}_phone`] && <p className="text-red-400 text-[10px] mt-1">{errors[`member_${index}_phone`]}</p>}
+                        </div>
+                        <div className="lg:col-span-1">
                           <label className="block text-xs font-bold mb-2 text-neutral-400 uppercase">Aadhaar (12 digits) *</label>
                           <input
                             type="text"
